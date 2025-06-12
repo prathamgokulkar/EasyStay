@@ -15,7 +15,7 @@ async function seedDB() {
 
     const modifiedListings = sampleListings.map(obj => ({
       ...obj,
-      owner: "6846860aef12b48a0daafb4f", 
+      owner: "684aa267c218b45a151a3865", 
     }));
 
     const inserted = await Listing.insertMany(modifiedListings);
