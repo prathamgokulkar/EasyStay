@@ -1,0 +1,61 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+    <div class="row">
+        <div class="col offset-2 col-8">
+        <br>
+        <h2>Edit information</h2>
+
+        <form action="/listings/<%= listing._id %>/?_method=PUT" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div>
+        <label for="title" class="form-label">Title:</label>
+        <input type="title" value="<%= listing.title %>" name="listing[title]" class="form-control" required>
+        <div class="invalid-feedback">Title required!</div>
+        </div>
+
+        <br>
+        
+        <div>
+        <label for="description" class="form-label">Description:</label>
+        <textarea name="listing[description]" class="form-control" required><%= listing.description %></textarea>
+        <div class="invalid-feedback">Please enter description</div>
+        </div>
+
+        <br>
+
+        <div>
+        <label for="location" class="form-label">Location:</label>
+        <input type="text" value="<%= listing.location %>" name="listing[location]" class="form-control" required>
+        <div class="invalid-feedback">Please enter location</div>
+        </div>
+
+        <br>
+        <div class="row">
+        <div class="col-md-4">
+        <label for="price" class="form-label">Price:</label>
+        <input type="number" value="<%= listing.price %>" name="listing[price]" class="form-control" required>
+        <div class="invalid-feedback">Please enter Price</div>
+        </div>
+
+        <br>
+
+        <div class="col-md-8 ">`
+        <label for="country" class="form-label">Country:</label>
+        <input type="text" value="<%= listing.country %>"name="listing[country]" class="form-control" required>
+        <div class="invalid-feedback">Please enter Country</div>
+        </div>
+        </div>
+        <br>
+
+        <div>
+        <label for="imageUrl" class="form-label">Image:</label>
+        <input type="file"  name="listing[images]" class="form-control" >
+        <div class="invalid-feedback">Please enter Image Url</div>
+        </div>
+
+        <br>
+        <button class="btn btn-primary btn-edit" >Edit listing</button>
+        <br><br>
+    </form>
+        </div>
+    </div>
+</body>
