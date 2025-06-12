@@ -1,23 +1,29 @@
-// index.js
+require("dotenv").config(); 
 const mongoose = require("mongoose");
-const Listing = require("../models/listing"); // Adjust path if needed
-const {sampleListings} = require("./data");
+const Listing = require("../models/listing");
+const { sampleListings } = require("./data");
+
+const dbUrl = process.env.ATLASDB_URL;
 
 async function seedDB() {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/easystay");
-    console.log("✅ Database connected successfully");
-    
+    await mongoose.connect(dbUrl);
+    console.log(" Connected to Atlas DB");
+
     await Listing.deleteMany({});
-    console.log("✅ All listings deleted");
+    console.log("Deleted old listings");
 
-    const modifiedListings = sampleListings.map((obj) => ({ ...obj, owner: '6846860aef12b48a0daafb4f' }));
-    const insertedListings = await Listing.insertMany(modifiedListings);
+    const modifiedListings = sampleListings.map(obj => ({
+      ...obj,
+      owner: "6846860aef12b48a0daafb4f", 
+    }));
 
-    console.log(`✅ Inserted ${insertedListings.length} listings`);
-    
+    const inserted = await Listing.insertMany(modifiedListings);
+    console.log(` Inserted ${inserted.length} listings`);
   } catch (err) {
-    console.error("❌ Error seeding database:", err);
+    console.error(" Seeding error:", err);
+  } finally {
+    mongoose.connection.close();
   }
 }
 
