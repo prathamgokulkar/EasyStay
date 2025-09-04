@@ -1,31 +1,59 @@
-🏡 EasyStay
-EasyStay is a full-stack web application inspired by Airbnb that allows users to explore, list, and book vacation rentals across the world.
+# EasyStay 🌍
 
-Built with Node.js, Express, MongoDB, and EJS, this app supports full CRUD operations, user authentication, image uploads, and review systems — delivering a complete travel accommodation platform experience.
+**EasyStay** is a full-stack web application inspired by Airbnb that allows users to explore, list, and book vacation rentals worldwide.
 
-✨ Features
-🔍 Browse Listings: Discover rentals by location, category, or popular tags.
+---
 
-📝 User Authentication: Register and log in securely using Passport.js.
+## Live Demo
+[Check it out here](https://easystay-2.onrender.com/listings)
 
-🏠 Host Your Place: Authenticated users can create, edit, and delete listings.
+---
 
-📸 Image Uploads: Upload listing images via Cloudinary.
+## Features
 
-💬 Reviews: Share feedback and ratings on stays.
+- **Browse Listings**: Discover rentals by location, category, or tags.  
+- **User Authentication**: Secure login/register with Passport.js.  
+- **Host Your Place**: Create, edit, and delete listings.  
+- **Image Uploads**: Upload listing images via Cloudinary.  
+- **Reviews**: Rate and review stays.  
+- **Responsive UI**: Mobile-friendly with Bootstrap & EJS.  
 
-🌐 Mobile Responsive UI: Clean and responsive design with Bootstrap & EJS.
+---
 
-🛠️ Tech Stack
-Backend: Node.js, Express.js, MongoDB, Mongoose
+## Tech Stack
 
-Frontend: HTML, EJS, Bootstrap
+- **Backend**: Node.js, Express.js, MongoDB, Mongoose  
+- **Frontend**: HTML, EJS, Bootstrap  
+- **Authentication**: Passport.js, express-session  
+- **File Uploads**: multer, Cloudinary  
+- **Deployment**: Render, MongoDB Atlas  
 
-Authentication: Passport.js, express-session
+---
 
-File Uploads: multer, Cloudinary
+## Installation & Setup
 
-Deployment: Render (backend), MongoDB Atlas (database)
+1. **Clone the repository**
+```bash
+git clone https://github.com/prathamgokulkar/easystay.git
+cd easystay
+```
 
-🚀 Live Demo
-https://easystay-2.onrender.com/listings
+2. ## Install dependencies
+```bash
+npm install
+```
+
+3. ## Start the server
+```bash
+npm start
+```
+
+## Future Enhancements
+
+- Booking & payment integration
+
+- Advanced search & filters
+
+- User profiles & booking history
+
+- Notifications for hosts and guests
